@@ -22,3 +22,38 @@ C:\Users\SparrowHawk\documents\visual studio 2013\Projects\Z1\Z1\obj\Debug\Theme
 C:\Users\SparrowHawk\documents\visual studio 2013\Projects\Z1\Z1\obj\Debug\Themes\Styles.Shared.baml
 C:\Users\SparrowHawk\documents\visual studio 2013\Projects\Z1\Z1\obj\Debug\Themes\Styles.WPF.baml
 C:\Users\SparrowHawk\documents\visual studio 2013\Projects\Z1\Z1\obj\Debug\Themes\Theme.Colors.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\bin\Debug\Z1.exe.config
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\bin\Debug\Z1.exe
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\bin\Debug\Z1.pdb
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\bin\Debug\WPFToolkit.dll
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Z1.csprojResolveAssemblyReference.cache
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\MainWindow.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\MetroDark\Custom.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\MetroDark\MetroDark.MSControls.Core.Implicit.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\MetroDark\MetroDark.MSControls.Toolkit.Implicit.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\MetroDark\Styles.Shared.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\MetroDark\Styles.WPF.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\MetroDark\Theme.Colors.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\Metro\Custom.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\Metro\Metro.MSControls.Core.Implicit.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\Metro\Metro.MSControls.Toolkit.Implicit.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\Metro\Styles.Shared.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\Metro\Styles.WPF.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\Metro\Theme.Colors.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\Office2013\Custom.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\Office2013\Office2013.MSControls.Core.Implicit.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\Office2013\Office2013.MSControls.Toolkit.Implicit.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\Office2013\Styles.Shared.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\Office2013\Styles.WPF.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Themes\Office2013\Theme.Colors.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\WritingSpace.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\App.baml
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\MainWindow.g.cs
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\WritingSpace.g.cs
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\App.g.cs
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Z1_MarkupCompile.cache
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Z1.g.resources
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Z1.Properties.Resources.resources
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Z1.csproj.GenerateResource.Cache
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Z1.exe
+C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\obj\Debug\Z1.pdb
