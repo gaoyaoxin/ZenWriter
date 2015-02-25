@@ -43,6 +43,8 @@ namespace Z1
             {
                 themes.Items.Add(td);
             }
+			
+			this.grid.MouseDown+=(o,e)=>{this.DragMove();};
         }
 
         void New()

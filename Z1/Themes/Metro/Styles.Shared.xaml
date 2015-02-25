@@ -6,7 +6,7 @@
   </ResourceDictionary.MergedDictionaries>
 
   <!-- *********************************  BRUSHES  ********************************* -->
-  <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource Color_001}" />
+    <SolidColorBrush x:Key="ForegroundBrush" Color="{StaticResource Color_001}"/>
   <SolidColorBrush x:Key="LightForegroundBrush" Color="{StaticResource Color_009}" />
   <SolidColorBrush x:Key="TransparentBrush" Color="{StaticResource Color_016}" />
   <SolidColorBrush x:Key="DisabledVisualElement" Color="{StaticResource Color_012}" />

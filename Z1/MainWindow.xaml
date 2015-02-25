@@ -4,7 +4,7 @@
         AllowsTransparency="True" WindowStyle="None"
         Title="Z1" Height="371.649" Width="581.529">
 
-    <Grid Background="{DynamicResource BackgroundKey}">
+    <Grid Name="grid" Background="{DynamicResource BackgroundKey}">
         <StackPanel HorizontalAlignment="Right">
             <Button Content="New" Click="New_Click"
                     Width="80" Height="40" Margin="10,10,10,10"/>
@@ -14,7 +14,7 @@
                     Width="80" Height="40" Margin="10,10,10,10"/>
         </StackPanel>
 
-        <StackPanel Name="options" HorizontalAlignment="Center">
+        <StackPanel Name="options" HorizontalAlignment="Center" VerticalAlignment="Top">
             <GroupBox Header="Typing" HorizontalAlignment="Left" VerticalAlignment="Top" 
                       Width="300" Margin="10,10,10,10" FontSize="14">
                 <StackPanel>
