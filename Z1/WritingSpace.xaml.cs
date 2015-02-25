@@ -71,9 +71,17 @@ namespace Z1
         }
         private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            this.title.Content = CountWords(text.Text) + " words";
-            // show not pending changes
-            this.dock.Background = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0));
+            this.title.Text = CountWords(text.Text) + " words";
+            ShowChangesPending();
+        }
+
+        private void ShowChangesPending()
+        {
+            this.title.FontStyle = FontStyles.Italic;
+        }
+        private void ShowNoChangesPending()
+        {
+            this.title.FontStyle = FontStyles.Normal;
         }
 
         int CountWords(string s)
@@ -257,8 +265,10 @@ namespace Z1
             File.WriteAllText(SaveLocation, text.Text);
 
             // show ok
-            this.dock.Background = new SolidColorBrush(Color.FromArgb(80, 0, 0, 0));
+            ShowNoChangesPending();
         }
+
+        
 
         #endregion
 

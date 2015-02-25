@@ -5,37 +5,38 @@
         WindowStyle="None" AllowsTransparency="True" ResizeMode="CanResizeWithGrip"
         KeyDown="Window_KeyDown" Background="Transparent" Closing="Window_Closing"
         Activated="Window_Activated" Deactivated="Window_Deactivated">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="TitleBarBrush" EndPoint="1,1" StartPoint="0.5,0">
+            <GradientStop Color="{DynamicResource Color_001}" Offset="0"/>
+            <GradientStop Color="{DynamicResource Color_008}" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Resources>
 
     <DockPanel Name="dock">
-        <Label Name="title" DockPanel.Dock="Top" HorizontalContentAlignment="Center"
-               FontSize="18" FontWeight="Bold" Foreground="Orange">
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Background="{DynamicResource TitleBarBrush}">
+            <TextBlock Name="title" Style="{DynamicResource SubHeaderTextBlockStyle}" Margin="6,0,0,0">
             0 words
-        </Label>
-        <Grid>           
-            <TextBox Name="text" Background="Black" Foreground="White" FontSize="14"
+            </TextBlock>
+        </StackPanel>
+        <Grid>
+            <TextBox Name="text" FontSize="14"
                      TextWrapping="Wrap" PreviewKeyDown="TextBox_PreviewKeyDown"
-                     Padding="10,10,10,10" AcceptsReturn="True" SpellCheck.IsEnabled="True">
+                     Padding="10,10,10,10" AcceptsReturn="True" SpellCheck.IsEnabled="True"
+                     Background="{DynamicResource BackgroundKey}" Foreground="{DynamicResource ForegroundBrush}">
                 <TextBox.ContextMenu>
                     <ContextMenu Visibility="Collapsed"/>
                 </TextBox.ContextMenu>
                 <TextBox.Style>
-                    <Style></Style>
+                    <Style/>
                 </TextBox.Style>
             </TextBox>
 
-            <Grid Name="options" Visibility="Hidden" Height="60" HorizontalAlignment="Stretch" Background="White">
+            <Grid Name="options" Visibility="Hidden" Height="60">
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <StackPanel.Resources>
-                        <Style TargetType="Button">
-                            <Setter Property="Width" Value="80"/>
-                            <Setter Property="Height" Value="40"/>
-                            <Setter Property="Margin" Value="10,10,10,10"/>
-                        </Style>
-                    </StackPanel.Resources>
-                    <Button Name="load" Click="options_Click">Open</Button>
-                    <Button Name="new" Click="options_Click">Save</Button>
-                    <Button Name="close">Close</Button>
+                    <Button Name="load" Click="options_Click" Margin="5">Open</Button>
+                    <Button Name="new" Click="options_Click" Margin="5">Save</Button>
+                    <Button Name="close" Margin="5">Close</Button>
                 </StackPanel>
             </Grid>
 

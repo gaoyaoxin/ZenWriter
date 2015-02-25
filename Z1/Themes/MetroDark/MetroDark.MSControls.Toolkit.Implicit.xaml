@@ -12,10 +12,27 @@
 
 	<!-- *********************************  RESOURCES  ********************************* -->
 	<ResourceDictionary.MergedDictionaries>
-		<ResourceDictionary Source="Styles.WPF.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Z1;component/Themes/MetroDark/Styles.WPF.xaml" />
 	</ResourceDictionary.MergedDictionaries>
 
 	<!-- *********************************  BRUSHES  ********************************* -->
+	<!-- Rating Brushes -->
+	<SolidColorBrush x:Key="RatingReadOnlyBackgroundBrush" Color="{StaticResource Color_013}" />
+	<SolidColorBrush x:Key="RatingReadOnlyBorderBrush" Color="{StaticResource Color_013}" />
+	<SolidColorBrush x:Key="RatingDisabledBackgroundBrush" Color="{StaticResource Color_004}" />
+	<SolidColorBrush x:Key="RatingDisabledBorderBrush" Color="{StaticResource Color_013}" />
+
+	<!-- RatingItem Brushes -->
+	<SolidColorBrush x:Key="RatingItemBackgroundBrush" Color="{StaticResource Color_009}" />
+	<SolidColorBrush x:Key="RatingItemBorderBrush" Color="{StaticResource Color_004}" />
+	<SolidColorBrush x:Key="RatingItemHoverBackgroundBrush" Color="{StaticResource Color_023}" />
+	<SolidColorBrush x:Key="RatingItemHoverBorderBrush" Color="{StaticResource Color_023}" />
+	<SolidColorBrush x:Key="RatingItemActiveBackgroundBrush" Color="{StaticResource Color_024}" />
+	<SolidColorBrush x:Key="RatingItemActiveBorderBrush" Color="{StaticResource Color_024}" />
+	<SolidColorBrush x:Key="RatingItemReadOnlyBackgroundBrush" Color="{StaticResource Color_024}" />
+	<SolidColorBrush x:Key="RatingItemReadOnlyBorderBrush" Color="{StaticResource Color_024}" />
+	<SolidColorBrush x:Key="RatingItemDisabledBackgroundBrush" Color="{StaticResource Color_008}" />
+	<SolidColorBrush x:Key="RatingItemDisabledBorderBrush" Color="{StaticResource Color_005}" />
 
     <!-- Accordion Brushes -->
 	<SolidColorBrush x:Key="AccordionBorderBrush" Color="{StaticResource Color_004}" />
@@ -31,6 +48,92 @@
     <SolidColorBrush x:Key="AccordionButtonExpandedBorderBrush" Color="{StaticResource Color_024}" />
     <SolidColorBrush x:Key="AccordionArrowBackgroundBrush" Color="{StaticResource Color_003}" />
     <SolidColorBrush x:Key="AccordionArrowExpandedBackgroundBrush" Color="{StaticResource Color_009}" />
+
+	<!--********************************** RatingItem Style **********************************-->
+	<Style x:Key="RatingItemStyle" TargetType="{x:Type inputToolkit:RatingItem}">
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type inputToolkit:RatingItem}">
+					<Grid Background="{TemplateBinding Background}" Width="30" Margin="2 0">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="30" />
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+						<Border BorderThickness="0" Background="{StaticResource TransparentBrush}" />
+						<Rectangle Fill="{StaticResource TransparentBrush}" Margin="-2 0" />
+						<Path x:Name="DefaultRatingItem" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" Opacity="1" Stretch="Fill" Fill="{StaticResource RatingItemBackgroundBrush}" Stroke="{StaticResource RatingItemBorderBrush}" StrokeThickness="0.4" StrokeLineJoin="Round" UseLayoutRounding="False" VerticalAlignment="Stretch" />
+
+						<inputToolkitPrimitives:LinearClipper ExpandDirection="Right" RatioVisible="{TemplateBinding DisplayValue}">
+							<Path Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" Fill="{TemplateBinding Foreground}" Opacity="1" Stretch="Fill" Stroke="{x:Null}" StrokeLineJoin="Round" UseLayoutRounding="False" VerticalAlignment="Stretch" />
+						</inputToolkitPrimitives:LinearClipper>
+
+						<Path x:Name="MouseOverRatingItem" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" Fill="{StaticResource RatingItemHoverBackgroundBrush}" Opacity="0" Stretch="Fill" Stroke="{StaticResource RatingItemHoverBorderBrush}" StrokeThickness="0.4" StrokeLineJoin="Round" UseLayoutRounding="False" VerticalAlignment="Stretch" />
+
+						<Path x:Name="PressedRatingItem" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" Fill="{StaticResource RatingItemActiveBackgroundBrush}" Opacity="0" Stretch="Fill" Stroke="{StaticResource RatingItemActiveBorderBrush}" StrokeLineJoin="Round" UseLayoutRounding="False" VerticalAlignment="Stretch" />
+
+						<Path x:Name="ReadOnlyRatingItem" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" Fill="{StaticResource RatingItemReadOnlyBackgroundBrush}" IsHitTestVisible="False" Opacity="0" Stretch="Fill" Stroke="{StaticResource RatingItemReadOnlyBorderBrush}" StrokeThickness="0.4" StrokeLineJoin="Round" UseLayoutRounding="False" VerticalAlignment="Stretch" />
+
+						<Path x:Name="DisabledRatingItemBackground" Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" Fill="{StaticResource RatingItemDisabledBackgroundBrush}" Opacity="0" Stretch="Fill" Stroke="{StaticResource RatingItemDisabledBorderBrush}" StrokeLineJoin="Round" UseLayoutRounding="False" VerticalAlignment="Stretch" />
+
+						<inputToolkitPrimitives:LinearClipper x:Name="DisabledRatingItem" ExpandDirection="Right" Opacity="0" RatioVisible="{TemplateBinding DisplayValue}">
+							<Path Data="M15,0 L18.6,11.373603 L30,11.459046 L20.824955,18.573566 L24.270519,30 L15,23.023449 L5.7294912,30 L9.1750822,18.573566 L0,11.459046 L11.399999,11.373603 z" Fill="{StaticResource RatingItemDisabledBackgroundBrush}" Opacity="1" Stretch="Fill" Stroke="{StaticResource RatingItemDisabledBorderBrush}" StrokeLineJoin="Round" UseLayoutRounding="False" VerticalAlignment="Stretch" />
+						</inputToolkitPrimitives:LinearClipper>
+						<ContentPresenter x:Name="Content" Cursor="{TemplateBinding Cursor}" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="Left" Margin="{TemplateBinding Padding}" Grid.Row="1" Grid.RowSpan="2" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Opacity" Value="1" TargetName="MouseOverRatingItem" />
+						</Trigger>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter Property="Opacity" Value="1" TargetName="PressedRatingItem" />
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Opacity" Value="1" TargetName="DisabledRatingItem" />
+							<Setter Property="Opacity" Value="1" TargetName="DisabledRatingItemBackground" />
+						</Trigger>
+						<Trigger Property="IsReadOnly" Value="True">
+							<Setter Property="Opacity" Value="0.7" TargetName="ReadOnlyRatingItem" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<!-- ********************************** Rating Style **********************************-->
+	<Style x:Key="RatingStyle" TargetType="{x:Type inputToolkit:Rating}">
+		<Setter Property="Foreground" Value="{StaticResource RatingItemActiveBackgroundBrush}" />
+		<Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+		<Setter Property="BorderBrush" Value="{StaticResource TransparentBrush}" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="ItemContainerStyle" Value="{StaticResource RatingItemStyle}" />
+		<Setter Property="ItemsPanel">
+			<Setter.Value>
+				<ItemsPanelTemplate>
+					<StackPanel IsItemsHost="True" Orientation="Horizontal" />
+				</ItemsPanelTemplate>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type inputToolkit:Rating}">
+					<Grid x:Name="Root">
+						<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+							<ItemsPresenter />
+						</Border>
+						<Border x:Name="ReadOnlyVisualElement" BorderBrush="{StaticResource RatingReadOnlyBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{StaticResource RatingReadOnlyBackgroundBrush}" IsHitTestVisible="False" Opacity="0" />
+						<Border x:Name="DisabledVisualElement" BorderBrush="{StaticResource RatingDisabledBorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{StaticResource RatingDisabledBackgroundBrush}" IsHitTestVisible="False" Opacity="0" />
+						<Rectangle x:Name="FocusVisualElement" IsHitTestVisible="false" RadiusY="1" RadiusX="1" StrokeThickness="1" Visibility="Collapsed" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsReadOnly" Value="True">
+							<Setter Property="Opacity" Value="0.03" TargetName="ReadOnlyVisualElement" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
 
   <!-- *********************************  AccordionButton Style  ********************************* -->
   <Style x:Key="AccordionButtonStyle" TargetType="layoutToolkitPrimitives:AccordionButton">
@@ -373,7 +476,7 @@
   </Style>
 
 	<!-- *********************************  ExpandableContentControl Style  ********************************* -->
-	<Style x:Key="ExpandableContentControlStyle" TargetType="Expander">
+	<Style x:Key="ExpandableContentControlStyle" TargetType="layoutToolkitPrimitives:ExpandableContentControl">
 		<Setter Property="FontFamily" Value="Segoe UI" />
 		<Setter Property="FontSize" Value="13.333" />
 		<Setter Property="BorderThickness" Value="0" />
@@ -385,7 +488,7 @@
 		<Setter Property="IsTabStop" Value="False" />
 		<Setter Property="Template">
 			<Setter.Value>
-				<ControlTemplate TargetType="Expander">
+				<ControlTemplate TargetType="layoutToolkitPrimitives:ExpandableContentControl">
 					<ContentPresenter x:Name="ContentSite" Cursor="{TemplateBinding Cursor}" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 				</ControlTemplate>
 			</Setter.Value>
@@ -821,6 +924,8 @@
   </Style>
     
     <!--********************** Implicit Styles *********************** -->
+    <Style BasedOn="{StaticResource RatingItemStyle}" TargetType="{x:Type inputToolkit:RatingItem}" />
+    <Style BasedOn="{StaticResource RatingStyle}" TargetType="{x:Type inputToolkit:Rating}" />
     <Style BasedOn="{StaticResource AccordionButtonStyle}" TargetType="layoutToolkitPrimitives:AccordionButton" />
     <Style BasedOn="{StaticResource AccordionItemStyle}" TargetType="layoutToolkit:AccordionItem" />
     <Style BasedOn="{StaticResource AccordionStyle}" TargetType="layoutToolkit:Accordion" />

@@ -5,18 +5,14 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-
-                <!-- MetroDark Theme -->
-                <ResourceDictionary Source="Themes/MetroDark.MSControls.Core.Implicit.xaml" />
-                <ResourceDictionary Source="Themes/MetroDark.MSControls.Toolkit.Implicit.xaml" />
-
-
+                
+                <!-- Metro Theme -->
+                <ResourceDictionary Source="Themes/Metro/Metro.MSControls.Core.Implicit.xaml" />
+                <ResourceDictionary Source="Themes/Metro/Metro.MSControls.Toolkit.Implicit.xaml" />
+                
             </ResourceDictionary.MergedDictionaries>
 
-            <!--<SolidColorBrush x:Key="BackgroundKey" Color="#FFFFFF" />-->
-
-            <!-- Dark Theme -->
-            <SolidColorBrush x:Key="BackgroundKey" Color="#FF181818" />
+            <ImageBrush x:Key="BackgroundKey" ImageSource="C:/Users/SparrowHawk/Pictures/green.jpg"/>
 
             <Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock">
                 <Setter Property="FontSize" Value="22" />

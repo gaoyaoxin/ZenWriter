@@ -2,8 +2,8 @@
 
   <!-- *********************************  RESOURCES  ********************************* -->
   <ResourceDictionary.MergedDictionaries>
-    <ResourceDictionary Source="Theme.Colors.xaml" />
-    <ResourceDictionary Source="Styles.Shared.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Z1;component/Themes/MetroDark/Theme.Colors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Z1;component/Themes/MetroDark/Styles.Shared.xaml" />
   </ResourceDictionary.MergedDictionaries>
 
   <!-- ******************************************************** WPF SPECIFIC INLINE-CONTROLS RESOURCES ***********************************************************

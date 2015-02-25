@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Reflection;
+using System.Windows.Markup;
+using System.Collections;
 
 namespace Z1
 {
@@ -26,6 +30,19 @@ namespace Z1
         public MainWindow()
         {
             InitializeComponent();
+            var path = @"C:\Users\SparrowHawk\Documents\GitHub\ZenWriter\Z1\Themes\";
+            var myThemes =
+                from dir in Directory.GetDirectories(path)
+                select new ThemeData()
+                {
+                    ThemeName = new FileInfo(dir).Name,
+                    ThemePath = dir
+                };
+
+            foreach (var td in myThemes)
+            {
+                themes.Items.Add(td);
+            }
         }
 
         void New()
@@ -47,12 +64,12 @@ namespace Z1
             // show the window
             w.Show();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void New_Click(object sender, RoutedEventArgs e)
         {
             New();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Options_Click(object sender, RoutedEventArgs e)
         {
             ToggleOptions();
         }
@@ -65,7 +82,7 @@ namespace Z1
                 this.options.Visibility = Visibility.Visible;
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
@@ -131,7 +148,26 @@ namespace Z1
             }
         }
 
-        #endregion         
+        #endregion
+
+        private void Theme_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (themes.SelectedIndex == -1) return;
+
+            var files = Directory.GetFiles(((ThemeData)themes.SelectedValue).ThemePath).Where(x => x.EndsWith(".xaml"));
+
+            foreach (var command in files)
+            {
+                var stream = new FileStream(command, FileMode.Open);
+
+                foreach (DictionaryEntry dictionaryEntry in (ResourceDictionary)XamlReader.Load(stream))
+                {
+                        Application.Current.Resources[dictionaryEntry.Key] = dictionaryEntry.Value;
+                   
+                }
+
+            }
+        }
 
     }
 }
