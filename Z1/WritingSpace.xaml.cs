@@ -45,6 +45,20 @@ namespace Z1
                     this.WindowState = WindowState.Normal;
             };
 
+            // click to change title
+            this.title.PreviewMouseDown += (o, e) =>
+            {
+                if (!title.IsKeyboardFocusWithin)
+                {
+                    title.Focus();
+                    e.Handled = true;
+                }
+            };
+            this.title.GotKeyboardFocus += (o, e) =>
+            {
+                this.title.SelectAll();
+            };
+
             // close
             this.close.Click += (o, e) => { this.Close(); };
         }
@@ -71,17 +85,17 @@ namespace Z1
         }
         private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            this.title.Text = CountWords(text.Text) + " words";
+            this.wordcount.Text = CountWords(text.Text) + " words";
             ShowChangesPending();
         }
 
         private void ShowChangesPending()
         {
-            this.title.FontStyle = FontStyles.Italic;
+            this.wordcount.FontStyle = FontStyles.Italic;
         }
         private void ShowNoChangesPending()
         {
-            this.title.FontStyle = FontStyles.Normal;
+            this.wordcount.FontStyle = FontStyles.Normal;
         }
 
         int CountWords(string s)
@@ -109,8 +123,8 @@ namespace Z1
                 options.Visibility = Visibility.Hidden;
         }
 
-        //---------------------------------------------------------------------
-        //------------------ background windows are more transparent ----------
+
+#region background windows are more transparent
 
         bool change = true;
         public bool CHANGE_OPACITY
@@ -145,7 +159,9 @@ namespace Z1
         }
 
 
-        #region save and load
+        #endregion
+
+#region save and load
 
         // default location is temporary datetime location
         string path = @"C:\Users\SparrowHawk\Desktop";

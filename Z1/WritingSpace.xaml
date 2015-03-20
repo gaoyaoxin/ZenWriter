@@ -7,22 +7,22 @@
         Activated="Window_Activated" Deactivated="Window_Deactivated">
     <Window.Resources>
         <LinearGradientBrush x:Key="TitleBarBrush" EndPoint="1,1" StartPoint="0.5,0">
-            <GradientStop Color="{DynamicResource Color_001}" Offset="0"/>
-            <GradientStop Color="{DynamicResource Color_008}" Offset="1"/>
+            <GradientStop Color="{DynamicResource Color_008}" Offset="0"/>
+            <GradientStop Color="Transparent" Offset="1"/>
         </LinearGradientBrush>
     </Window.Resources>
 
     <DockPanel Name="dock">
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Background="{DynamicResource TitleBarBrush}">
-            <TextBlock Name="title" Style="{DynamicResource SubHeaderTextBlockStyle}" Margin="6,0,0,0">
-            0 words
-            </TextBlock>
-        </StackPanel>
+        <Grid DockPanel.Dock="Top" Background="{DynamicResource TitleBarBrush}">
+            <TextBlock Name="wordcount" Style="{DynamicResource HeaderTextBlockStyle}" Margin="4">0 words</TextBlock>
+            <TextBox Name="title" Style="{DynamicResource HeaderTextBoxStyle}" Margin="4" HorizontalAlignment="Center"
+                     >Title</TextBox>
+        </Grid>
         <Grid>
-            <TextBox Name="text" FontSize="14"
+            <TextBox Name="text" FontSize="14" CaretBrush="{DynamicResource Brush01}"
                      TextWrapping="Wrap" PreviewKeyDown="TextBox_PreviewKeyDown"
                      Padding="10,10,10,10" AcceptsReturn="True" SpellCheck.IsEnabled="True"
-                     Background="{DynamicResource BackgroundKey}" Foreground="{DynamicResource ForegroundBrush}">
+                     Background="{DynamicResource  Background_writing}" Foreground="{DynamicResource ForegroundBrush}">
                 <TextBox.ContextMenu>
                     <ContextMenu Visibility="Collapsed"/>
                 </TextBox.ContextMenu>

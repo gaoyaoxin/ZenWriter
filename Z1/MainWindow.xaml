@@ -4,7 +4,7 @@
         AllowsTransparency="True" WindowStyle="None"
         Title="Z1" Height="371.649" Width="581.529">
 
-    <Grid Name="grid" Background="{DynamicResource BackgroundKey}">
+    <Grid Name="grid" Background="{DynamicResource Background_main}">
         <StackPanel HorizontalAlignment="Right">
             <Button Content="New" Click="New_Click"
                     Width="80" Height="40" Margin="10,10,10,10"/>

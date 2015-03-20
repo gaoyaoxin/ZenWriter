@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <ImageBrush x:Key="BackgroundKey" ImageSource="C:/Users/SparrowHawk/Pictures/dark forest.jpg"/>
+    <ImageBrush x:Key="Background_main" ImageSource="C:/Users/SparrowHawk/Pictures/dark forest.jpg"/>
+    <ImageBrush x:Key="Background_writing" ImageSource="C:/Users/SparrowHawk/Pictures/dark forest.jpg"/>
 </ResourceDictionary>
